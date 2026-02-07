@@ -2,9 +2,9 @@
 # функци для подсчета BMI
 def calculate_bmi(weight, height):
     BMI = weight / height**2
-    category = ("Недостаточный вес", "Нормальный вес", "Избыточный вес", "Ожирение")[(BMI < 18.5)+(BMI < 25) + (BMI < 30)]
+    category = ("Ожирение", "Избыточный вес", "Нормальный вес", "Недостаточный вес")[(BMI < 30) + (BMI < 25) + (BMI < 18.5)]
     return (BMI, category)
-print(calculate_bmi(67, 67))
+print(calculate_bmi(100, 1.8))
 
 print('\n')
 
@@ -38,6 +38,7 @@ def generate_password(lenght, use_special=True):
     password += dopchisla
 
     secrets.SystemRandom().shuffle(password)
+
 
 
     digits = any( i.isdigit() for i in password )
