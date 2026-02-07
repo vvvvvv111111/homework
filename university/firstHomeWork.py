@@ -23,6 +23,10 @@ def generate_password(lenght, use_special=True):
     import random
     import secrets
     import string
+    if lenght < 8:
+        print('длина кода должна быть ольше 8')
+        return
+    
 
     password=[]
     password = [secrets.choice(string.ascii_lowercase) for a in range(2)] + [secrets.choice(string.ascii_uppercase) for a in range(2)]
@@ -56,6 +60,8 @@ def generate_password(lenght, use_special=True):
         category = "отличный"
     if (all([digits, letter,special])) and lenght > 16:
         category = "превосходный"
+    
+    password=''.join(password)
     
     return(password,category)
 
