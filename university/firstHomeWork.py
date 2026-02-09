@@ -154,7 +154,7 @@ def validate_expression(expression):
                 del tokens[i:i+2]
             else:
                 i += 1
-    return str(tokens[0]) if tokens else expression
+    return str(tokens[0])
 
 
 print(validate_expression(expression ="(2 + 3) * 4 - 5 / (6 + 1)"))    
