@@ -127,8 +127,6 @@ def validate_expression(expression):
             else:
                 i += 1
         result = str(tokens[0])
-        end = expression.find(')')
-        start = expression.rfind('(', 0, end)
         expression = expression[:start] + result + expression[end+1:]
     tokens = re.findall(r'\d+\.?\d*|[+\-*/]', expression)
     for i, token in enumerate(tokens):
