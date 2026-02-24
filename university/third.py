@@ -83,9 +83,9 @@ class player:
         self.money = money
         with open("inventory.json","r", encoding="utf-8") as file:
             content = file.read()
-            if content.strip():  # Проверяем, не пустой ли файл
+            if content.strip(): 
                 self.data = json.loads(content)
-            else:  # Если файл пустой
+            else:  
                 self.data = {}
         if name in self.data:
             items = self.data[name]
