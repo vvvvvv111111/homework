@@ -1,5 +1,33 @@
 import json
 
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    def distance_to(self, self2):
+        print(((self.x - self2.x)**2 + (self.y - self2.y)**2)**0.5)
+
+
+class Circle:
+    def __init__(self, center, radius):
+        self.center = center
+        self.radius = radius
+    
+    def area(self):
+        self.pi = 3.14159
+        print(self.pi * self.radius ** 2)
+
+
+class Rectangle:
+    def __init__(self, point1, point2):
+        self.point1 = point1
+        self.point2 = point2
+    
+    def perimeter(self):
+        result = 2 * ((self.point2.x - self.point1.x) + (self.point2.y - self.point1.y))
+        print(result)
+
 class item: 
     check = ["оружие", "зелье" , "броня"]
     def __init__(self, name: str, type: str, weight: float, value: float):
