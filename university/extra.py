@@ -1,31 +1,44 @@
-
-class point:
+class Inventory:
+    def __init__(self, max_size):
+        self.max_size = max_size
+        self.items = []
     
-    def __init__(self, x: float,y: float):
-        self(x,y)= (x,y)
-        pass
-
-    def rastoyanieMegTochkami(point: point, point1: point):
-        point.rastoyanieMegTochkami(point1) = ((point1[0]-point[0])**2+(point1[1]-point[1])**2)
-
-class Circle:
-    Circle = ()
-
-    def __init__(self, radius: float, point: float):
-        self(radius, point) = (radius, point)
-        pass
-    def area(self: Circle):
-        self.area()= self[0]*2*3.1415
-
-class rectangle:
-    rectangle = ()
-    def __init__(self, point1:point, point2:point):
-        self(point1,point2) = (point1,point2)
-        
-        pass
-    def perimetr(self):
-        self.perimetr = (self[1][0]-self[0][0])*(self[1][1]-self[0][1])
-        if self.perimetr < 0:
-            self.perimetr*-1
+    # Реализуйте магические методы ниже
+    def __len__(self):
+        return len(self.items)
+    
+    def __str__(self):
+        return f"max size is {self.max_size}, items: {" ".join(self.items)}"
+    
+    def __repr__(self):
+        return f"max size is {self.max_size}, items: {len(self.items)}"
+    
+    # Дополнительные методы
+    def add_item(self, item):
+        if self.max_size == len(self.items):
+            False
+        else: 
+            self.items += item
 
 
+
+    
+    
+    def remove_item(self, item):
+        nov = []
+        for i in self.items:
+            if i != item:
+                nov.append(i)
+        self.items = nov
+
+
+# Тестовые примеры (раскомментируйте после реализации)
+inv = Inventory(max_size=5)
+inv.add_item("Меч")
+inv.add_item("Щит")
+inv.add_item("Зелье")
+print(len(inv))
+print(str(inv))
+print(repr(inv))
+inv.remove_item("Щит")
+print(len(inv))
